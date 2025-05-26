@@ -1,0 +1,8 @@
+PyMuPDF
+nltk
+sentence-transformers
+faiss-cpu
+openai
+chromadb
+mysql-connector-python
+

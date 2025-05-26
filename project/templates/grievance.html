@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Grievance Redressal</h1>
+    {% for entry in chat %}
+        <div class="chat-box {{ 'user' if entry.role == 'user' else '' }}">
+            <p>{{ entry.message }}</p>
+        </div>
+    {% endfor %}
+    <div class="fixed-bottom">
+    <form method="POST">
+        <input type="text" name="message" placeholder="Type your response here..." required>
+        <input type="submit" value="Send">
+    </form>
+    <p style="text-align: center;"><a href="{{ url_for('home') }}">Back to Home</a></p>
+</div>
+{% endblock %}

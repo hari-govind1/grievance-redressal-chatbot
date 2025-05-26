@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Welcome to the Grievance Redressal Bot</h1>
+    <div class="chat-box">
+        <p>How can I assist you today?</p>
+        <p><a href="{{ url_for('qa_bot') }}">Q&A Bot</a> | <a href="{{ url_for('grievance') }}">Grievance Redressal</a> | <a href="{{ url_for('track_grievance') }}">Track Your Grievance</a></p>
+    </div>
+{% endblock %}

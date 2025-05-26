@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Track Your Grievance</h1>
+    
+    <form method="POST">
+        <input type="text" name="tracking_number" placeholder="Enter your tracking number..." required>
+        <input type="submit" value="Track">
+    </form>
+
+    {% if message %}
+        <p style="color: red;">{{ message }}</p>
+    {% elif result %}
+        <div class="chat-box">
+            {% if 'error' in result %}
+                <p style="color: red;">{{ result.error }}</p>
+            {% else %}
+                <h3>Grievance Details</h3>
+                <p><strong>Tracking Number:</strong> {{ result.tracking_number }}</p>
+                <p><strong>Name:</strong> {{ result.name }}</p>
+                <p><strong>Class:</strong> {{ result.class }}</p>
+                <p><strong>Department:</strong> {{ result.user_department }}</p>
+                <p><strong>Location:</strong> {{ result.location }}</p>
+                <p><strong>Email:</strong> {{ result.email }}</p>
+                <p><strong>Summary:</strong> {{ result.summary }}</p>
+                <p><strong>Status:</strong> <span style="color: green;">Resolved</span></p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <p style="text-align: center;"><a href="{{ url_for('home') }}">Back to Home</a></p>
+{% endblock %}

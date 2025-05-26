@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Grievance Redressal Bot</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .chat-box {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .chat-box.user {
+            background-color: #f9f9f9;
+            text-align: right;
+            align-items: right;
+        }
+        .message {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 12px;
+            max-width: 75%;
+            font-size: 1.1em;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background-color: #fff3cd;
+            margin-left: auto;
+            color: #555;
+        }
+        .bot-message {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .chat-box p {
+            color: #333;
+            margin: 0;
+            font-size: 1.1em; /* Slightly larger for general text in chat box */
+        }
+        /* Specific styling for links inside chat-box */
+        .chat-box a {
+            color: #2b6cb0; /* Muted blue for better contrast on white background */
+            font-size: 1.2em; /* Larger font size for links */
+            margin: 0 10px; /* Spacing between links */
+            text-decoration: underline; /* Underline to make links more distinct */
+            transition: color 0.3s ease; /* Smooth hover transition */
+        }
+        .chat-box a:hover {
+            color: #1a4971; /* Darker blue on hover for better visibility */
+            text-decoration: none; /* Remove underline on hover for elegance */
+        }
+        form {
+            display: flex;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            background-color: #ffffff;
+            color: #333;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4a4a4a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #666;
+        }
+        a {
+            color: #4a4a4a;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            position: -webkit-sticky;
+            position: sticky;
+            padding-bottom: 10px;
+            background-color: #ffffff;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+            padding: 10px;
+            color: #777;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        Powered by Karpagam Institute of Technology - Grievance Redressal Bot 
+    </footer>
+</body>
+</html>
